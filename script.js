@@ -21,14 +21,17 @@ const getHamsters = function (animal) {
     )
         .then((listOfImages) => {
             console.log('Image', listOfImages)
-            console.log(listOfImages.photos[0].src.small)
+            console.log(listOfImages.photos[0])
 
             let img = document.querySelectorAll('img')
+            let small = document.querySelectorAll('small')
             console.log(img[0].currentSrc)
+            console.log(small[0])
 
             const searchHamster = function (click){
-            for(let i = 0; i < listOfImages.photos.length; i++){
-            img[i].setAttribute('src', listOfImages.photos[i].src.small)
+            for(let i = 0; i < img.length; i++){
+            img[i].setAttribute('src', listOfImages.photos[i].src.tiny)
+            small[i].innerText = listOfImages.photos[i].id
             }
         }
         searchHamster()
@@ -42,11 +45,10 @@ const getHamsters = function (animal) {
 
 const editButtons = function(){
     const buttons = document.querySelectorAll('.btn-group')
-    console.log(buttons[0].lastElementChild)
-    buttons[0].lastElementChild.setAttribute('innerText', "Hide")
-
-        console.log(buttons[0].lastElementChild.innerText)
+    console.log(buttons[0].lastElementChild.textContent)
+    for(let i=0; i < buttons.length; i++)
+    buttons[i].lastElementChild.innerText = 'Hide'
+        // console.log(buttons[i].lastElementChild.innerText)
 }
-
 
 editButtons()
