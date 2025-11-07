@@ -46,9 +46,12 @@ const getHamsters = function (animal) {
 const editButtons = function(){
     const buttons = document.querySelectorAll('.btn-group')
     console.log(buttons[0].lastElementChild.textContent)
-    for(let i=0; i < buttons.length; i++)
+    for(let i=0; i < buttons.length; i++){
     buttons[i].lastElementChild.innerText = 'Hide'
+    // buttons[i]addEventListener(click)
+    }
         // console.log(buttons[i].lastElementChild.innerText)
 }
 
 editButtons()
+
